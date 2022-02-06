@@ -1,15 +1,27 @@
 public class Ball {
 
-    public int ball_width;
-    public int ball_height;
-    public int ball_xPos;
-    public int ball_yPos;
+    public final int BALL_RADIUS;
+    public final int SPEED;
+    private int ballXPos;
+    private int ballYPos;
 
-    public Ball(int width, int height, int xPos, int yPos){
-        ball_width = width;
-        ball_height = height;
-        ball_xPos = xPos;
-        ball_yPos = yPos;
+    public Ball(int yPos, int speed){
+        BALL_RADIUS = 10;
+        ballXPos = 0;
+        ballYPos = yPos;
+        SPEED = speed;
+    }
+
+    public void moveBall(){
+        this.ballXPos += this.SPEED;
+    }
+
+    public int getXPos(){
+        return this.ballXPos;
+    }
+
+    public int getYPos(){
+        return this.ballYPos;
     }
 
 }
